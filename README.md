@@ -1,27 +1,25 @@
 # JV_LIB
  	<!--
-//private static final Gson GSON = new GsonBuilder().create();
-//
-//	public static Driver getDriver() {
-//		return GraphDatabase.driver("neo4j://localhost:7687",
-		AuthTokens.basic("neo4j", "12345678"));
-//	}
-//
-//	public static <T> T nodeToPOPJO(Node node, Class<T> clazz) {
-//		Map<String, Object> map = node.asMap();
-//		String json = GSON.toJson(map);
-//		T obj = GSON.fromJson(json, clazz);
-//		return obj;
-//
-//	};
-//
-//	public static <T> Map<String, Object> getProp(T t) {
-//		String json = GSON.toJson(t);
-//		Map<String, Object> map = GSON.fromJson(json, new TypeToken<Map<String,
-		Object>>() {
-//		});
-//		return map;
-//	}
+private static final Gson GSON = new GsonBuilder().create();
+
+	public static Driver getDriver() {
+		return GraphDatabase.driver("neo4j://localhost:7687", AuthTokens.basic("neo4j", "12345678"));
+	}
+
+	public static <T> T nodeToPOPJO(Node node, Class<T> clazz) {
+		Map<String, Object> map = node.asMap();
+		String json = GSON.toJson(map);
+		T obj = GSON.fromJson(json, clazz);
+		return obj;
+
+	};
+
+	public static <T> Map<String, Object> getProp(T t) {
+		String json = GSON.toJson(t);
+		Map<String, Object> map = GSON.fromJson(json, new TypeToken<Map<String, Object>>() {
+		});
+		return map;
+	}
 
 -->
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
