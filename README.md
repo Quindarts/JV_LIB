@@ -15,6 +15,20 @@
 					<artifactId>mssql-jdbc</artifactId>
 					<version>12.3.0.jre17-preview</version>
 				</dependency>
+
+				    <dependency>
+					<groupId>org.junit.jupiter</groupId>
+							<artifactId>junit-jupiter-api</artifactId>
+							<version>5.10.2</version>
+							<scope>test</scope>
+					</dependency>
+					<dependency>
+							<groupId>org.junit.jupiter</groupId>
+							<artifactId>junit-jupiter-engine</artifactId>
+							<version>5.10.2</version>
+							<scope>test</scope>
+						</dependency>
+
 		</dependencies>
 
 # Setup Persistence.xml
