@@ -18,7 +18,8 @@
 </dependencies>
 
 # Setup Persistence.xml
-<property name="jakarta.persistence.jdbc.driver"
+	<properties>
+			<property name="jakarta.persistence.jdbc.driver"
 				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 			<property name="jakarta.persistence.jdbc.dialect"
 				value="org.hibernate.dialect.SQLServerDialect" />
@@ -30,7 +31,7 @@
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
-
+		</properties>
 
   
   <!--
