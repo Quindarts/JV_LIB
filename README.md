@@ -1,21 +1,21 @@
 # JV_LIB
 
 # Setup POM.XML
-<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
-		<dependency>
-			<groupId>org.hibernate.orm</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>6.4.4.Final</version>
-		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
-		<dependency>
-			<groupId>com.microsoft.sqlserver</groupId>
-			<artifactId>mssql-jdbc</artifactId>
-			<version>12.3.0.jre17-preview</version>
-		</dependency>
-</dependencies>
+		<dependencies>
+				<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+				<dependency>
+					<groupId>org.hibernate.orm</groupId>
+					<artifactId>hibernate-core</artifactId>
+					<version>6.4.4.Final</version>
+				</dependency>
+				<!--
+				https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+				<dependency>
+					<groupId>com.microsoft.sqlserver</groupId>
+					<artifactId>mssql-jdbc</artifactId>
+					<version>12.3.0.jre17-preview</version>
+				</dependency>
+		</dependencies>
 
 # Setup Persistence.xml
 	<properties>
