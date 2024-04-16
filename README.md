@@ -6,7 +6,7 @@
 				<dependency>
 					<groupId>org.hibernate.orm</groupId>
 					<artifactId>hibernate-core</artifactId>
-					<version>6.4.4.Final</version>
+					<version>6.4.1.Final</version>
 				</dependency>
 				<!--
 				https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
