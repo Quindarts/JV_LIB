@@ -1,5 +1,39 @@
 # JV_LIB
- 	<!--
+
+# Setup POM.XML
+<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.4.4.Final</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>12.3.0.jre17-preview</version>
+		</dependency>
+</dependencies>
+
+# Setup Persistence.xml
+<property name="jakarta.persistence.jdbc.driver"
+				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="jakarta.persistence.jdbc.dialect"
+				value="org.hibernate.dialect.SQLServerDialect" />
+			<property name="hibernate.connection.url"
+				value="jdbc:sqlserver://localhost:1433;databaseName=schooldb;trustServerCertificate=true;encrypt=true;" />
+			<property name="hibernate.connection.username" value="sa" />
+			<property name="hibernate.connection.password"
+				value="sapassword" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
+
+  
+  <!--
 private static final Gson GSON = new GsonBuilder().create();
 
 	public static Driver getDriver() {
