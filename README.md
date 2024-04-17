@@ -78,6 +78,70 @@
 `
 
    <br/>  <br/>
+
+
+# Server - RMI
+
+	
+public class Server {
+	private static final String URL = "rmi://H92M17:7878/";
+	private static final String URL2 = "rmi://DESKTOP-CVG78RE:7878/";
+
+	public static void main(String[] args) {
+		try {
+			Context context = new InitialContext();
+
+			CourseDAO courseDAO = new CourseImpl(); // Java Remote object
+			StudentDAO studentDAO = new StudentImpl(); // Java Remote object
+			DepartmentDAO departmentDAO = new DepartmentImpl(); // Java Remote object
+
+			LocateRegistry.createRegistry(7878);
+			context.bind(URL2 + "departmentDAO", departmentDAO);
+			context.bind(URL2 + "courseDAO", courseDAO);
+			context.bind(URL2 + "studentDAO", studentDAO);
+
+			studentDAO.findStudentsEnrolledInYear(2024);
+
+//			departmentDAO.findDepartmentNotOwnerCourse().forEach((d) -> {
+//				System.out.println(d);
+//			});
+			studentDAO.findStudentsEnrolledInCourse("Calculus").forEach(st -> {
+				System.out.println(st);
+			});
+
+			System.out.println("Server is running...");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+}
+
+  # Client - RMI
+
+  public class Client {
+	
+	private static final String URL = "rmi://H92M17:7878/";
+	private static final String URL2 = "rmi://DESKTOP-CVG78RE:7878/";
+
+	public static void main(String[] args) {
+		try {
+			CourseDAO courseDAO = (CourseDAO) Naming.lookup(URL2 + "courseDAO");
+			StudentDAO studentDAO = (StudentDAO) Naming.lookup(URL2 + "studentDAO");
+			DepartmentDAO departmentDAO = (DepartmentDAO) Naming.lookup(URL2 + "departmentDAO");
+			
+			
+			studentDAO.findAll().forEach(System.out::println);
+			departmentDAO.findDepartmentNotOwnerCourse().forEach(System.out::println);
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}
+
+
   # GSON
   
   <!--
