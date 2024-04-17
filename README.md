@@ -47,6 +47,31 @@
 			<property name="hibernate.format_sql" value="true" />
 		</properties>
 
+
+
+# Extend ~ Abstract Class
+	3 Type :
+ 1) Per_class
+    			`@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)`
+ 	
+2) Single_table:
+   	CLASS PERSON:
+			@Entity
+			@Table(name = "Person")
+			@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+			@DiscriminatorColumn(name = "Discriminator", discriminatorType = DiscriminatorType.STRING) 	
+	CLASS STUDENT
+			@Entity
+			@Table(name = "Student")
+			@DiscriminatorValue("Student")
+   	CLASS INSTRUCTOR
+   			@Entity
+			@Table(name = "Instructor")
+			@DiscriminatorValue("Instructor")
+
+
+
+  # GSON
   
   <!--
 private static final Gson GSON = new GsonBuilder().create();
