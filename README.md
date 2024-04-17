@@ -56,19 +56,20 @@
     			`@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)`
  	
 2) Single_table:
+<br/>  <br/>
    	CLASS PERSON:`
 			@Entity
 			@Table(name = "Person")
 			@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 			@DiscriminatorColumn(name = "Discriminator", discriminatorType = DiscriminatorType.STRING)
    `
-   <br/>
+   <br/>  <br/>  <br/>
 	CLASS STUDENT`
 			@Entity
 			@Table(name = "Student")
 			@DiscriminatorValue("Student")
    `
-      <br/>
+      <br/>  <br/>  <br/>
    	CLASS INSTRUCTOR
    `
    			@Entity
@@ -76,7 +77,7 @@
 			@DiscriminatorValue("Instructor")
 `
 
-   <br/>
+   <br/>  <br/>
   # GSON
   
   <!--
