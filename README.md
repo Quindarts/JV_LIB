@@ -50,6 +50,7 @@
 
 
 # Extend ~ Abstract Class
+<>
 	3 Type :
  1) Per_class
     			`@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)`
@@ -69,7 +70,7 @@
 			@Table(name = "Instructor")
 			@DiscriminatorValue("Instructor")
 
-
+</>
 
   # GSON
   
