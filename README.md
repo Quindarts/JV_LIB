@@ -2,37 +2,39 @@
 
 # Setup POM.XML
 		<dependencies>
-				<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
-				<dependency>
-					<groupId>org.hibernate.orm</groupId>
-					<artifactId>hibernate-core</artifactId>
-					<version>6.4.1.Final</version>
-				</dependency>
-				<!--
-				https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
-				<dependency>
-					<groupId>com.microsoft.sqlserver</groupId>
-					<artifactId>mssql-jdbc</artifactId>
-					<version>12.3.0.jre17-preview</version>
-				</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.4.4.Final</version>
+		</dependency>
+		<!--
+			https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>12.3.0.jre17-preview</version>
+		</dependency>
 
-				    <dependency>
-					<groupId>org.junit.jupiter</groupId>
-							<artifactId>junit-jupiter-api</artifactId>
-							<version>5.10.2</version>
-							<scope>test</scope>
-					</dependency>
-					<dependency>
-							<groupId>org.junit.jupiter</groupId>
-							<artifactId>junit-jupiter-engine</artifactId>
-							<version>5.10.2</version>
-							<scope>test</scope>
-						</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.10.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.10.2</version>
+			<scope>test</scope>
+		</dependency>
 
-		</dependencies>
-
+	</dependencies>
 # Setup Persistence.xml
-	<properties>
+	<persistence-unit name="jpa-mssql">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<properties>
 			<property name="jakarta.persistence.jdbc.driver"
 				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 			<property name="jakarta.persistence.jdbc.dialect"
@@ -43,9 +45,10 @@
 			<property name="hibernate.connection.password"
 				value="sapassword" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
-			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="true" />
 		</properties>
+	</persistence-unit>
 
 
 
